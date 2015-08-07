@@ -1,0 +1,1755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.8" jmeter="2.13 r1665067">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain"></stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        <stringProp name="HTTPSampler.protocol"></stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">4</stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1370726934000</longProp>
+        <longProp name="ThreadGroup.end_time">1370726934000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <RecordingController guiclass="RecordController" testclass="RecordingController" testname="Recording Controller" enabled="true"/>
+        <hashTree>
+          <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Messages current in use" enabled="true">
+            <boolProp name="TransactionController.includeTimers">false</boolProp>
+            <boolProp name="TransactionController.parent">false</boolProp>
+          </TransactionController>
+          <hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/login (incorrect credentials)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;email&quot;:&quot;kimar@mailinator.com&quot;,&quot;password&quot;:&quot;1234&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/login</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1548878146">{&quot;error&quot;:&quot;fail&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/login (correct credentials)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;email&quot;:&quot;kimar@mailinator.com&quot;,&quot;password&quot;:&quot;123&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/login</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-550243427">&quot;success&quot;:&quot;ok&quot;</stringProp>
+                  <stringProp name="-757832725">&quot;token&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+                <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+                <stringProp name="RegexExtractor.refname">token</stringProp>
+                <stringProp name="RegexExtractor.regex">&quot;token&quot;:&quot;(.+?)&quot;</stringProp>
+                <stringProp name="RegexExtractor.template">$1$</stringProp>
+                <stringProp name="RegexExtractor.default"></stringProp>
+                <stringProp name="RegexExtractor.match_number"></stringProp>
+              </RegexExtractor>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/kimar@mailinator.com (Existing user)" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/user/kimar@mailinator.com</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-346164846">{&quot;_id&quot;:&quot;55b1a54f6db8879fcb057cbf&quot;,&quot;currentEmail&quot;:&quot;kimar@mailinator.com&quot;,&quot;email&quot;:&quot;kimar@mailinator.com&quot;,&quot;image&quot;:&quot;https://lh3.googleusercontent.com/-_he4fcicZN4/AAAAAAAAAAI/AAAAAAAAABI/eEqSiLEYdMQ/photo.jpg&quot;,&quot;interests&quot;:[&quot;Coding&quot;,&quot;Karate&quot;,&quot;Hiking&quot;,&quot;Automation Testing&quot;],&quot;locations&quot;:[&quot;432 Water Street&quot;,&quot;163 W Hastings St&quot;,&quot;Langara College&quot;],&quot;memberships&quot;:[2,3,4,5],&quot;name&quot;:&quot;Kimar Neves&quot;,&quot;participate&quot;:[2,3,4,5,6,7],&quot;skills&quot;:[&quot;Soccer defensive player&quot;,&quot;Bad jokes&quot;,&quot;Bash script&quot;,&quot;Java&quot;,&quot;Barbecue Eating&quot;,&quot;Beer drinking&quot;]}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/group/2/name (Retrieve existing group name)" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/group/2/name</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1190661077">&quot;group_name&quot;</stringProp>
+                  <stringProp name="425814725">&quot;group_id&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/group/3/name  (Retrieve existing group name)" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/group/3/name</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1190661077">&quot;group_name&quot;</stringProp>
+                  <stringProp name="425814725">&quot;group_id&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/group/4/name  (Retrieve existing group name)" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/group/4/name</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1190661077">&quot;group_name&quot;</stringProp>
+                  <stringProp name="425814725">&quot;group_id&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/group/5/name  (Retrieve existing group name)" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/group/5/name</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1190661077">&quot;group_name&quot;</stringProp>
+                  <stringProp name="425814725">&quot;group_id&quot;</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/session/validate (valid session, correct token)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;email&quot;:&quot;kimar@mailinator.com&quot;,&quot;token&quot;:&quot;${token}&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/session/validate</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1751128741">{&quot;success&quot;:&quot;ok&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/session/validate (invalid token dimension)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;email&quot;:&quot;kimar@mailinator.com&quot;,&quot;token&quot;:&quot;55c45ec5367b23cb37b2adb1bbc&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/session/validate</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="950626238">Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="52469">500</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/session/validate (incorrect token)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;email&quot;:&quot;kimar@mailinator.com&quot;,&quot;token&quot;:&quot;55c45ec5367b23cb37b2adb1&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/session/validate</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1799535011">{&quot;error&quot;:&quot;session not found&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">1</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/kimar@mailinator.com/groups" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/user/kimar@mailinator.com/groups</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1869343022">[2,3,4,5]</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/kimar@mailinator.com" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/kimar@mailinator.com</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/groups (full list of groups in the server)" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/groups</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/group/2 (Existing Group)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/group/2</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="511047337">[{&quot;_id&quot;:&quot;55b3a2602ac05e2907583e22&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;100 West 49th Avenue - Langara&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V5Y 2Z6&quot;},&quot;category&quot;:[&quot;Sports&quot;,&quot;Karate&quot;,&quot;Goju-Ryu&quot;],&quot;created&quot;:&quot;Sat Jul 25 2015 07:40:05 GMT-0700 (PDT)&quot;,&quot;denounce counter&quot;:0,&quot;email&quot;:null,&quot;entry_reqs&quot;:[],&quot;group_id&quot;:2,&quot;group_name&quot;:&quot;Karate in Langara&quot;,&quot;image&quot;:&quot;http://previews.123rf.com/images/aptypkok/aptypkok1108/aptypkok110800038/10217509-Karate-Young-girl-and-a-men-in-a-kimono-with-a-white-background-Battle-sports-capture-Stock-Photo.jpg&quot;,&quot;info&quot;:&quot;Come and practice the ancient art of Goju Kai Karate Do. This is just test data.&quot;,&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Friday&quot;,&quot;start&quot;:&quot;7pm&quot;,&quot;end&quot;:&quot;8pm&quot;},{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;9am&quot;,&quot;end&quot;:&quot;10am&quot;}],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;}]</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/group/12356 (Group not found)" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/group/12356</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1677582810">{&quot;error&quot;:&quot;Group Not Found&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="52469">500</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/update/user/kimar@mailinator.com (Update existing user)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;name&quot;:&quot;Kimar Neves&quot;,&quot;currentEmail&quot;:&quot;kimar@mailinator.com&quot;,&quot;email&quot;:&quot;kimar@mailinator.com&quot;,&quot;interests&quot;:[&quot;Coding&quot;,&quot;Karate&quot;,&quot;Hiking&quot;,&quot;Automation Testing&quot;],&quot;skills&quot;:[&quot;Soccer defensive player&quot;,&quot;Bad jokes&quot;,&quot;Bash script&quot;,&quot;Java&quot;,&quot;Barbecue Eating&quot;,&quot;Beer drinking&quot;],&quot;locations&quot;:[&quot;432 Water Street&quot;,&quot;163 W Hastings St&quot;,&quot;Langara College&quot;],&quot;image&quot;:&quot;https://lh3.googleusercontent.com/-_he4fcicZN4/AAAAAAAAAAI/AAAAAAAAABI/eEqSiLEYdMQ/photo.jpg&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/update/user/kimar@mailinator.com</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-640398761">{&quot;success&quot;:&quot;true&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/create/groups" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;category&quot;:[&quot;Test&quot;],&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;1 pm&quot;,&quot;end&quot;:&quot;2 pm&quot;}],&quot;group_id&quot;:666,&quot;group_name&quot;:&quot;Test&quot;,&quot;info&quot;:&quot;Test automation&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;123 Street&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V6E 1G3&quot;},&quot;image&quot;:&quot;http://www.fundraising123.org/files/u16/bigstock-Test-word-on-white-keyboard-27134336.jpg&quot;,&quot;created&quot;:&quot;2015-08-07T07:33:43.916Z&quot;,&quot;owner&quot;:&quot;kimar@mailinator.com&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/create/groups</stringProp>
+              <stringProp name="HTTPSampler.method">PUT</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-51900072">{&quot;success&quot; : &quot;Group has been created&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/update/group/666 (Update existing group)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;category&quot;:[&quot;Test&quot;],&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;1 pm&quot;,&quot;end&quot;:&quot;2 pm&quot;}],&quot;group_id&quot;:666,&quot;group_name&quot;:&quot;Test&quot;,&quot;info&quot;:&quot;Test automation&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;123 Street&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V6E 1G3&quot;},&quot;image&quot;:&quot;http://www.fundraising123.org/files/u16/bigstock-Test-word-on-white-keyboard-27134336.jpg&quot;,&quot;created&quot;:&quot;2015-08-07T07:33:43.916Z&quot;,&quot;owner&quot;:&quot;kimar@mailinator.com&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/update/group/666</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-640398761">{&quot;success&quot;:&quot;true&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Delete group created in previous step" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value"></stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/group/666</stringProp>
+              <stringProp name="HTTPSampler.method">DELETE</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1079124123">&quot;ok&quot;:1</stringProp>
+                  <stringProp name="34711245">&quot;n&quot;:1</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/group/by_owner/kimar@mailinator.com" enabled="true">
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+                <collectionProp name="Arguments.arguments"/>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+              <stringProp name="HTTPSampler.path">/group/by_owner/kimar@mailinator.com</stringProp>
+              <stringProp name="HTTPSampler.method">GET</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1002721595">[{&quot;_id&quot;:&quot;55bbffe6e42b21146d858bfc&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;123 St&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;British Columbia&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V5P 2E5&quot;},&quot;category&quot;:[&quot;Test&quot;,&quot;Tester&quot;],&quot;created&quot;:&quot;2015-07-31T23:08:16.782Z&quot;,&quot;email&quot;:null,&quot;group_id&quot;:1234,&quot;group_name&quot;:&quot;Testei&quot;,&quot;image&quot;:&quot;https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcStrYpySFIuOrxfHX2VB0dkpFpNfuBm3X5cDUGJJQSB98WYK-B8&quot;,&quot;info&quot;:&quot;Testing. This is just test data.&quot;,&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;11am&quot;,&quot;end&quot;:&quot;12 pm&quot;}],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;},{&quot;_id&quot;:&quot;55b3a32d2ac05e2907583e23&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;100 West 49th Avenue - Langara&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V5Y 2Z6&quot;},&quot;category&quot;:[&quot;Sports&quot;,&quot;Soccer&quot;],&quot;created&quot;:&quot;Sat Jul 25 2015 07:53:51 GMT-0700 (PDT)&quot;,&quot;denounce counter&quot;:0,&quot;email&quot;:null,&quot;entry_reqs&quot;:[],&quot;group_id&quot;:3,&quot;group_name&quot;:&quot;Soccer in Langara 3&quot;,&quot;image&quot;:&quot;http://www.collegescholarships.org/images/soccer-scholarships.jpg&quot;,&quot;info&quot;:&quot;Prepare to be the next Whitecaps player. This is just test data.&quot;,&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;2pm&quot;,&quot;end&quot;:&quot;4pm&quot;}],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;,&quot;kimar2@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;},{&quot;_id&quot;:&quot;55b9c8442ba32fa14e51c659&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;100 West 49th Avenue - Langara&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V5Y 2Z6&quot;},&quot;category&quot;:[&quot;Sports&quot;,&quot;Soccer&quot;],&quot;created&quot;:&quot;Sat Jul 25 2015 07:53:51 GMT-0700 (PDT)&quot;,&quot;denounce counter&quot;:0,&quot;email&quot;:null,&quot;entry_reqs&quot;:[],&quot;group_id&quot;:6,&quot;group_name&quot;:&quot;Soccer in Langara 23&quot;,&quot;image&quot;:&quot;http://www.collegescholarships.org/images/soccer-scholarships.jpg&quot;,&quot;info&quot;:&quot;Prepare to be the next Whitecaps player. This is just test data.&quot;,&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;2pm&quot;,&quot;end&quot;:&quot;4pm&quot;}],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;},{&quot;_id&quot;:&quot;55b3a2602ac05e2907583e22&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;100 West 49th Avenue - Langara&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V5Y 2Z6&quot;},&quot;category&quot;:[&quot;Sports&quot;,&quot;Karate&quot;,&quot;Goju-Ryu&quot;],&quot;created&quot;:&quot;Sat Jul 25 2015 07:40:05 GMT-0700 (PDT)&quot;,&quot;denounce counter&quot;:0,&quot;email&quot;:null,&quot;entry_reqs&quot;:[],&quot;group_id&quot;:2,&quot;group_name&quot;:&quot;Karate in Langara&quot;,&quot;image&quot;:&quot;http://previews.123rf.com/images/aptypkok/aptypkok1108/aptypkok110800038/10217509-Karate-Young-girl-and-a-men-in-a-kimono-with-a-white-background-Battle-sports-capture-Stock-Photo.jpg&quot;,&quot;info&quot;:&quot;Come and practice the ancient art of Goju Kai Karate Do. This is just test data.&quot;,&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Friday&quot;,&quot;start&quot;:&quot;7pm&quot;,&quot;end&quot;:&quot;8pm&quot;},{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;9am&quot;,&quot;end&quot;:&quot;10am&quot;}],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;},{&quot;_id&quot;:&quot;55ba9bffdea527d857d7d025&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;Langara College&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V6E 1G3&quot;},&quot;category&quot;:[&quot;Dancing&quot;,&quot;Samba&quot;,&quot;Latin America&quot;,&quot;Brazil&quot;],&quot;created&quot;:&quot;2015-07-30T21:49:45.455Z&quot;,&quot;email&quot;:null,&quot;entry_reqs&quot;:[],&quot;group_id&quot;:7,&quot;group_name&quot;:&quot;Samba Classes&quot;,&quot;image&quot;:&quot;data:image/jpeg;base64,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&quot;,&quot;info&quot;:&quot;Learn samba with Brazilian instructor. Free if you bring beer! This is just test data.&quot;,&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;1 pm&quot;,&quot;end&quot;:&quot;5 pm&quot;}],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;,&quot;kimar2@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;},{&quot;_id&quot;:&quot;55bba605ab766d99667555ba&quot;,&quot;category&quot;:[&quot;Class&quot;],&quot;created&quot;:&quot;2015-07-31T16:44:51.261Z&quot;,&quot;email&quot;:null,&quot;entry_reqs&quot;:[&quot;kimar2@mailinator.com&quot;],&quot;group_id&quot;:99,&quot;group_name&quot;:&quot;Test&quot;,&quot;info&quot;:&quot;This is just test data.&quot;,&quot;meeting_time&quot;:[],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;},{&quot;_id&quot;:&quot;55b8681c61b8cd8b3d1f006b&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;100 West 49th Avenue - Langara&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V5Y 2Z6&quot;},&quot;category&quot;:[&quot;Sports&quot;],&quot;created&quot;:&quot;Sat Jul 25 2015 07:53:51 GMT-0700 (PDT)&quot;,&quot;denounce counter&quot;:0,&quot;email&quot;:null,&quot;entry_reqs&quot;:[&quot;kimar2@mailinator.com&quot;,&quot;joselito@mailinator.com&quot;,&quot;joselito2@mailinator.com&quot;,&quot;joselito3@mailinator.com&quot;,&quot;joselito2@mailinator.com&quot;,&quot;joselito4@mailinator.com&quot;,&quot;joselito5@mailinator.com&quot;,&quot;joselito5@mailinator.com&quot;,&quot;joselitos@mailinator.com&quot;],&quot;group_id&quot;:4,&quot;group_name&quot;:&quot;Superstar Soccer in Langara&quot;,&quot;image&quot;:&quot;http://www.collegescholarships.org/images/soccer-scholarships.jpg&quot;,&quot;info&quot;:&quot;Prepare to be the next Whitecaps player. This is just test data.&quot;,&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;2pm&quot;,&quot;end&quot;:&quot;4pm&quot;}],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;},{&quot;_id&quot;:&quot;55b86dde0706585b3f227dff&quot;,&quot;address&quot;:{&quot;address&quot;:&quot;100 West 49th Avenue - Langara&quot;,&quot;city&quot;:&quot;Vancouver&quot;,&quot;state&quot;:&quot;BC&quot;,&quot;country&quot;:&quot;Canada&quot;,&quot;postal_code&quot;:&quot;V5Y 2Z6&quot;},&quot;category&quot;:[&quot;Sports&quot;,&quot;Soccer&quot;],&quot;created&quot;:&quot;Sat Jul 25 2015 07:53:51 GMT-0700 (PDT)&quot;,&quot;denounce counter&quot;:0,&quot;email&quot;:null,&quot;entry_reqs&quot;:[&quot;joselito@mailinator.com&quot;],&quot;group_id&quot;:5,&quot;group_name&quot;:&quot;Langara&quot;,&quot;image&quot;:&quot;http://www.collegescholarships.org/images/soccer-scholarships.jpg&quot;,&quot;info&quot;:&quot;Prepare to be the next Whitecaps player. This is just test data.&quot;,&quot;meeting_time&quot;:[{&quot;day&quot;:&quot;Saturday&quot;,&quot;start&quot;:&quot;2pm&quot;,&quot;end&quot;:&quot;4pm&quot;}],&quot;members&quot;:[&quot;kimar@mailinator.com&quot;],&quot;owner&quot;:&quot;kimar@mailinator.com&quot;}]</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/logout (valid session)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;token&quot;:&quot;${token}&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/logout</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="1751128741">{&quot;success&quot;:&quot;ok&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/logout (invalid session)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;token&quot;:&quot;55c45ec5367b23cb37b2adb1&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/logout</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="-1799535011">{&quot;error&quot;:&quot;session not found&quot;}</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">false</boolProp>
+                <intProp name="Assertion.test_type">8</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+            <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/user/logout (invalid token)" enabled="true">
+              <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+              <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+                <collectionProp name="Arguments.arguments">
+                  <elementProp name="" elementType="HTTPArgument">
+                    <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                    <stringProp name="Argument.value">{&quot;token&quot;:&quot;55c45ec5367b23cb37b2adb1bbc&quot;}</stringProp>
+                    <stringProp name="Argument.metadata">=</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </elementProp>
+              <stringProp name="HTTPSampler.domain">finderest.kweb.j43.ca</stringProp>
+              <stringProp name="HTTPSampler.port">8080</stringProp>
+              <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+              <stringProp name="HTTPSampler.response_timeout"></stringProp>
+              <stringProp name="HTTPSampler.protocol">http</stringProp>
+              <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+              <stringProp name="HTTPSampler.path">/user/logout</stringProp>
+              <stringProp name="HTTPSampler.method">POST</stringProp>
+              <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+              <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+              <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+              <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+              <boolProp name="HTTPSampler.monitor">false</boolProp>
+              <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            </HTTPSamplerProxy>
+            <hashTree>
+              <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+                <collectionProp name="HeaderManager.headers">
+                  <elementProp name="Cache-Control" elementType="Header">
+                    <stringProp name="Header.name">Cache-Control</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                  <elementProp name="Content-Type" elementType="Header">
+                    <stringProp name="Header.name">Content-Type</stringProp>
+                    <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Language" elementType="Header">
+                    <stringProp name="Header.name">Accept-Language</stringProp>
+                    <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept" elementType="Header">
+                    <stringProp name="Header.name">Accept</stringProp>
+                    <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                  </elementProp>
+                  <elementProp name="Origin" elementType="Header">
+                    <stringProp name="Header.name">Origin</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca</stringProp>
+                  </elementProp>
+                  <elementProp name="User-Agent" elementType="Header">
+                    <stringProp name="Header.name">User-Agent</stringProp>
+                    <stringProp name="Header.value">Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0</stringProp>
+                  </elementProp>
+                  <elementProp name="Referer" elementType="Header">
+                    <stringProp name="Header.name">Referer</stringProp>
+                    <stringProp name="Header.value">http://kweb.j43.ca/project/</stringProp>
+                  </elementProp>
+                  <elementProp name="Accept-Encoding" elementType="Header">
+                    <stringProp name="Header.name">Accept-Encoding</stringProp>
+                    <stringProp name="Header.value">gzip, deflate</stringProp>
+                  </elementProp>
+                  <elementProp name="Pragma" elementType="Header">
+                    <stringProp name="Header.name">Pragma</stringProp>
+                    <stringProp name="Header.value">no-cache</stringProp>
+                  </elementProp>
+                </collectionProp>
+              </HeaderManager>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="950626238">Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">2</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+              <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+                <collectionProp name="Asserion.test_strings">
+                  <stringProp name="52469">500</stringProp>
+                </collectionProp>
+                <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+                <boolProp name="Assertion.assume_success">true</boolProp>
+                <intProp name="Assertion.test_type">16</intProp>
+              </ResponseAssertion>
+              <hashTree/>
+            </hashTree>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+    <WorkBench guiclass="WorkBenchGui" testclass="WorkBench" testname="WorkBench" enabled="true">
+      <boolProp name="WorkBench.save">true</boolProp>
+    </WorkBench>
+    <hashTree>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="true">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list">
+          <stringProp name="-2135475220">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|woff)[\?;].*</stringProp>
+          <stringProp name="1409425616">(?i).*\.(bmp|css|js|gif|ico|jpe?g|png|swf|woff)</stringProp>
+        </collectionProp>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">4</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">true</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">true</boolProp>
+      </ProxyControl>
+      <hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>false</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>false</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>true</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <hostname>true</hostname>
+              <threadCounts>true</threadCounts>
+              <sampleCount>true</sampleCount>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
