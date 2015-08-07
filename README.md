@@ -27,6 +27,7 @@ Project structure:
 + Documentation: scratch of the documentation used during development.
 
 Limitations:
-- B/E error validation is very limited and close to non-existing and needs to be improved.
+- B/E error validation is very limited and close to non-existing and needs to be improved. Some basic validation is missing so B/E crashes when trying to do some operations like retrieving information of a non-existing user.
 - The session authentications is limited and in order to correctly implement additional security the messages should be modified to include the token in the header and REST implementation should check this token for every transaction (like it is done by IMGUR RESTful API).
 - The implementation of a session token and its validation was done in a pretty basic way just to test the possibility by the development team.
+- All B/E response messages need to be reformatted to follow a common pattern, e.g. { "status":"success|fail", "data": ...}
