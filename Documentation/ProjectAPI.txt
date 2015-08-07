@@ -1,0 +1,412 @@
+﻿Name of the application: Finderest
+API address: http://finderest.kweb.j43.ca:8080
+
+
+POST - /user/login
+{
+“email”: (unique id)
+        “password”:
+}
+PUT - /create/users OK
+{
+        “user_id”:”u1” //we need user id to use it in routes for example /users/{userid}/groups
+        “name”:
+        “email”: (unique id) 
+        “password”:
+        “interests”: []
+        “skills”: []
+        “locations”: []
+        "image" : 
+}
+---
+Example of a user
+{
+  "name": "Kimar Neves",
+  "email": "kimar.neves@gmail.com",
+  "interests":["karate","coding"]
+}
+
+
+PUT - /create/group/ OK
+{
+        "group_id": "(generated sequential)"
+        "group_name":
+        "members": [] //list of e-mails
+        "category": []
+        "info": textarea
+        "address": {address, city, state, country, postal_code}
+        "created":
+        "meeting_time": []
+        "entry_reqs":[] //List of e-mail of people requesting entry
+}
+---
+Example of group
+{
+        "group_id": 1,
+        "group_name": "Do karate together",
+        "members": ["kimar.neves@gmail.com", "isimvol@gmail.com"],
+        "category": ["fun","martial_arts","kickass"],
+        "info": "Our Karate, 4 times world karate do champion, class for free.",
+        "address": {"street":"langara 49", "city":"Vancouver", "state":"BC", "country":"Canada", "postal_code":"B3B3B3"},
+        "created":"2015/07/15",
+        "meeting_time": ["2015/07/16 12:00pm","2015/07/23 12:00pm"]
+}
+
+
+Actions:
+* Request entry to a group
+* Invite people for a group
+* View groups information
+* Retrieve group name
+* View user's information
+* View groups you are in
+* View invitations
+* Remove your profile
+* Remove a group
+* Block group
+* Denounce a group
+* Filters: by Category, by Region (Group) and (People), by Size (Group), by People (in Group and people), by time, by creation date (group), by Skills (People), by Interest (People)
+
+
+POST - /update/user/:email (full update user object)
+{
+    "_id": "55b1a54f6db8879fcb057cbf",
+    "email": "kimar@mailinator.com",
+    "image": "https://lh3.googleusercontent.com/-_he4fcicZN4/AAAAAAAAAAI/AAAAAAAAABI/eEqSiLEYdMQ/photo.jpg",
+    "interests": [
+        "Coding",
+        "Karate",
+        "Hiking",
+        "Automation Testing"
+    ],
+    "locations": [
+        "432 Water Street",
+        "163 W Hastings St",
+        "Langara College"
+    ],
+    "memberships": [
+        2,
+        3,
+        4,
+        5
+    ],
+    "name": "Kimar 'The Magic' Neves",
+    "skills": [
+        "Soccer defensive player",
+        "Bad jokes",
+        "Bash script",
+        "Java",
+        "Barbecue Eating",
+        "Beer drinking"
+    ]
+}
+
+
+POST - /update/user/:email/groups (only add more groups to user profile, to remove use the update function above - might remove this later or change it)
+{
+        "membership" : ":group_id"
+ }
+
+
+
+
+POST - /update/group/:group_id (full updated group object)
+{
+        "group_id": 3,
+        "group_name": "Soccer in Langara 3",
+        "image": "http://www.collegescholarships.org/images/soccer-scholarships.jpg",
+        "owner": "kimar@mailinator.com",
+        "members": [
+            "kimar@mailinator.com"
+        ],
+        "category": [
+            "Sports",
+            "Soccer"
+        ],
+        "info": "Prepare to be the next Whitecaps player.",
+        "address": {
+            "address": "100 West 49th Avenue - Langara",
+            "city": "Vancouver",
+            "state": "BC",
+            "country": "Canada",
+            "postal_code": "V5Y 2Z6"
+        },
+        "created": "Sat Jul 25 2015 07:53:51 GMT-0700 (PDT)",
+        "meeting_time": [
+            {
+                "day": "Saturday",
+                "start": "2pm",
+                "end": "4pm"
+            }
+        ],
+        "entry_reqs": [],
+        "denounce counter": 0,
+        "email": null,
+        "_id": "55b3a32d2ac05e2907583e23"
+    }
+
+
+
+
+POST -- /request_entry/:group_id  /* TO TEST */
+{
+        email: // "e-mail of the user requesting to be added to group"
+}
+* Request entry to a group
+
+
+POST -- /people/invite /* DOES NOT GUARANTEE SUCCESS.*/
+{
+        group id:
+        people: []
+}
+* Invite people for a group
+
+
+GET - /group/by_name/:group_name OK
+* View groups information (Returns list of groups which match the name)
+
+
+GET -        /group/:group_id OK
+* View groups information
+
+
+GET - /group/:group_id/name OK
+Group name: 
+* Retrieve group name
+---
+Example
+{ “name”:”Do karate together”}
+
+
+GET - /users/:email OK
+* View user's information
+
+
+GET - /user/:email/groups OK
+Groups: [] (Array of group ids that user is associated with - memberships)
+* View groups you are in
+---
+Example 
+{
+   “memberships”:[1]
+}
+
+
+GET - /user/:email/invitations /* OK */
+Array => {        group_id:
+date_invite:
+status:
+}
+* View invitations
+
+
+DELETE - /user/:email  - OK
+* Remove your profile
+
+
+DELETE - /groups/:group_id - OK
+* Remove a group
+
+
+
+
+* Block group - ADD later  +++++++
+POST - /users/{username}/block
+{
+        Group id:
+}
+
+
+
+
+POST - /groups/{group_id}/denounce   /*ADD LATER*/
+{
+        e-mail (e-mail from the user)
+}
+* Denounce a group
+
+
+
+
+* Filters by Category:
+----------------------
+
+
+POST - /filter/group/category -OK
+{
+        categories: []
+}
+* Filter groups by category
+
+
+POST - filter/group/region - TEST
+{
+        regions: [] // list of postal codes
+}
+* Filter group by meeting location. 
+
+
+POST - /filter/group/size - TODO
+{
+        min-size: // Numeric value for size
+max-size:: // Numeric value for size
+* Filter group by group size. (Need to define sizes or will we use numeric values? Numeric values)
+
+
+POST - /filter/group/members - OK
+{
+        Names: []
+}
+* Filter group that contains the names listed.
+
+
+POST - /filter/group/meeting-time OK
+{
+         meet-times: []
+}
+* Filter group according to the group meeting times.
+
+
+POST -/filter/group OK
+{
+        categories: []
+        regions: []
+        min-size:
+max-size:
+        names: []
+        Meet-times: []
+}
+
+
+
+
+* Filters by Users:
+-------------------
+
+
+POST - /filter/user/region VERIFY
+{
+        regions: [] //list of postal-codes
+}
+* Filter users by location they have interest in.
+
+
+POST - /filter/user/skills OK
+{
+        skills: []
+}
+* Filter users by skills they have listed.
+
+
+POST - /filter/user/interest OK
+{
+        Interests: []
+}
+* Filter users by interests they have listed.
+
+
+POST - /filter/user OK
+{
+        regions: []
+        Skills: []
+        Interests: []
+}
+* Combined group filter - implement if time allow.
+
+
+* Additional functionalities
+-----------------------------
+
+
+GET - /list/interests TODO
+* Returns a list of all interests people have inserted in the system.
+GET - /list/:email/locations TODO
+* Returns a list of all user locations.
+        
+
+
+========================================================================
+
+
+* Full user OBJECT in MongoDB
+------------------------------
+{
+        name:
+        email: (unique id)
+        password:
+        interests: []
+        skills: []
+        locations: [] // locations of interest by the user
+        invitations: [] // list of invitation ids
+        memberships: [] // list of group ids
+        image: <url_to_image>
+}
+
+
+* Full invitation OBJECT in MongoDB
+-----------------------------------
+{
+        _id:
+        group_id:
+        date:
+        status: accepted | rejected | pending
+}
+
+
+
+
+* Full group OBJECT in MongoDB
+-----------------------------------
+{
+        "group_id": "(generated sequential)" - For now _id
+        "group_name":
+        "image":
+        "owner": //e-mail of the owner
+        "members": [] //list of e-mails
+        "category": []
+        "info": textarea
+        "address": {address, city, state, country, postal_code}
+        "created":
+        "meeting_time": []
+        "entry_reqs":[] //List of e-mail of people requesting entry
+        "denounce counter": //Counter with how many denounce
+}
+
+
+
+
+--- How to restore an user to specific information ---
+POST
+finderest.kweb.j43.ca:8080/update/user/kimar@mailinator.com
+{
+    "_id": "55b1a54f6db8879fcb057cbf",
+    "email": "kimar@mailinator.com",
+    "image": "https://lh3.googleusercontent.com/-_he4fcicZN4/AAAAAAAAAAI/AAAAAAAAABI/eEqSiLEYdMQ/photo.jpg",
+    "interests": [
+        "Coding",
+        "Karate",
+        "Hiking",
+        "Automation Testing"
+    ],
+    "locations": [
+        "432 Water Street",
+        "163 W Hastings St",
+        "Langara College"
+    ],
+    "memberships": [
+        2,
+        3,
+        4,
+        5
+    ],
+    "name": "Kimar 'The Magic' Neves",
+    "skills": [
+        "Soccer defensive player",
+        "Bad jokes",
+        "Bash script",
+        "Java",
+        "Barbecue Eating",
+        "Beer drinking"
+    ]
+}
