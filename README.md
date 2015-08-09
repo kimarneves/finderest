@@ -4,6 +4,7 @@ This is a repository for CPSC 2261 Project in Summer 2015 (Langara College)
 This is a simple project to demonstrate how Node.js can be used to implement a REST API and Angular.JS + Bootstrap to implement a F/E application. Technologies in use: Node.js, Angular.JS, Bootstrap and Mongo DB.
 
 This project implements an application where user can register and create groups or find groups with activities in similar interests. Although B/E has a list of functionalities that were not used by F/E, the application concentrates in using the following REST API routes:
+```
 - PUT /create/users: create new users in the system.
 - POST /user/login: establishes a session for an existing user
 - GET /user/:email (Existing user): retrieve profile of an existing user by providing the user e-mail registered.
@@ -19,6 +20,7 @@ This project implements an application where user can register and create groups
 - DELETE /group/:group-id: delete a group from the system. (Not implemented in F/E)
 - GET /group/by_owner/:email: retrieves all groups owned by an user
 - POST /user/logout: removes an existing session token from the list of valid entries in the server.
+```
 
 Project structure:
 + Backend: contain a node.js file that implements the RESTful API.
